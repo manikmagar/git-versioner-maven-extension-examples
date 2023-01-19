@@ -31,3 +31,57 @@ Running 'help:evaluate -Dexpression=project.version -q -DforceStdout' for multi-
 ----
 ./mvn-delegate.sh -q clean
 ----
+
+== Increment versions
+
+Run any of the below commands. For each version increment command below, one commit per sample project is added to local git repository.
+
+NOTE: `simple-project-props` overrides version keywords in link:simple-project-props/.mvn/git-versioner.extensions.properties[git-versioner.extensions.properties]. Version commits will add commits with those keywords.
+
+.Check current version
+[source,shell]
+----
+./mvn-delegate.sh help:evaluate -Dexpression=project.version -q -DforceStdout
+----
+
+
+.Increment patch version
+[source,shell]
+----
+./mvn-delegate.sh -q git-versioner:commit-patch
+----
+
+.Check new version
+[source,shell]
+----
+./mvn-delegate.sh help:evaluate -Dexpression=project.version -q -DforceStdout
+----
+
+
+.Increment minor version
+[source,shell]
+----
+./mvn-delegate.sh -q git-versioner:commit-minor
+----
+
+
+.Check new version
+[source,shell]
+----
+./mvn-delegate.sh help:evaluate -Dexpression=project.version -q -DforceStdout
+----
+
+
+.Increment major version
+[source,shell]
+----
+./mvn-delegate.sh -q git-versioner:commit-major
+----
+
+
+.Check new version
+[source,shell]
+----
+./mvn-delegate.sh help:evaluate -Dexpression=project.version -q -DforceStdout
+----
+
