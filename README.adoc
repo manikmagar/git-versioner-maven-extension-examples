@@ -1,0 +1,33 @@
+= Git Versioner Maven Extension Examples
+
+This repository holds examples demonstrating use of https://github.com/manikmagar/git-versioner-maven-extension[git-versioner-maven-extension].
+
+Extension is configured in `.mvn` directories in each example project.
+
+To run commands against all projects, use `./mvn-delegate.sh` script at the root.
+
+
+.Print project version for all example projects
+[source,shell]
+----
+./mvn-delegate.sh help:evaluate -Dexpression=project.version -q -DforceStdout
+
+Running 'help:evaluate -Dexpression=project.version -q -DforceStdout' for simple-project
+0.0.0-1
+################################
+Running 'help:evaluate -Dexpression=project.version -q -DforceStdout' for simple-project-props
+1.3.4+92bbdaa
+################################
+Running 'help:evaluate -Dexpression=project.version -q -DforceStdout' for parent-child-project
+0.0.0-1
+################################
+Running 'help:evaluate -Dexpression=project.version -q -DforceStdout' for multi-module-project
+0.0.0-1
+################################
+----
+
+.Clean all projects
+[source,shell]
+----
+./mvn-delegate.sh -q clean
+----

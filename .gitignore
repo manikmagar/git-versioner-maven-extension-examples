@@ -1,0 +1,5 @@
+**/target/
+
+**/.git-versioner.pom.xml
+
+.DS_Store
